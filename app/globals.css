@@ -59,6 +59,14 @@ h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
 .order-controls { min-width: 180px; display: grid; gap: .7rem; align-content: start; }
 .order-controls select { padding: .6rem; background: white; border: 1px solid var(--line); }
 .notice { padding: .8rem; background: #fff3c9; font-size: .82rem; }
+.compact-form { grid-template-columns: 1fr 1fr; margin-bottom: 2rem; }
+.compact-form h3, .compact-form .button, .compact-form p { grid-column: 1 / -1; }
+.manage-grid { display: grid; gap: 1rem; }
+.manage-card { display: grid; grid-template-columns: 180px 1fr; background: var(--paper); border: 1px solid var(--line); padding: .8rem; gap: 1rem; }
+.manage-card img { width: 180px; height: 160px; object-fit: cover; }
+.manage-card h3 { margin: .2rem 0 .5rem; }
+.manage-card button { padding: .5rem .7rem; border: 1px solid var(--ink); background: white; cursor: pointer; font-weight: 800; }
+.manage-card .danger { color: #a52d50; border-color: #a52d50; }
 footer { max-width: 1180px; margin: auto; border-top: 1px solid var(--line); padding: 2rem; display: flex; justify-content: space-between; font-size: .78rem; color: #777282; }
 @media (max-width: 760px) {
   .site-header { align-items: flex-start; }
@@ -67,5 +75,8 @@ footer { max-width: 1180px; margin: auto; border-top: 1px solid var(--line); pad
   .hero-art { min-height: 330px; }
   .art-grid { grid-template-columns: 1fr; }
   .order-card { grid-template-columns: 1fr; }
+  .compact-form { grid-template-columns: 1fr; }
+  .manage-card { grid-template-columns: 1fr; }
+  .manage-card img { width: 100%; }
   main { padding: 2rem 1.2rem 4rem; }
 }
