@@ -9,6 +9,9 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
   const update: Record<string, unknown> = { updated_at: new Date().toISOString() };
   if (statuses.includes(body.order_status)) update.order_status = body.order_status;
   if (payments.includes(body.payment_status)) update.payment_status = body.payment_status;
+  if (body.quoted_amount === null || body.quoted_amount === "") update.quoted_amount = null;
+  else if (Number.isFinite(Number(body.quoted_amount)) && Number(body.quoted_amount) >= 0) update.quoted_amount = Number(body.quoted_amount);
+  if (typeof body.owner_notes === "string") update.owner_notes = body.owner_notes.trim() || null;
   const supabase = await createClient();
   const { data, error } = await supabase.from("orders").update(update).eq("id", (await params).id).select("*").single();
   if (error) return NextResponse.json({ error: "Update failed." }, { status: 500 });

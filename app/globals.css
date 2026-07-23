@@ -58,6 +58,9 @@ h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
 .order-card p { line-height: 1.55; }
 .order-controls { min-width: 180px; display: grid; gap: .7rem; align-content: start; }
 .order-controls select { padding: .6rem; background: white; border: 1px solid var(--line); }
+.order-details { display: grid; gap: .6rem; border-top: 1px solid var(--line); padding-top: .7rem; }
+.order-details input, .order-details textarea { width: 100%; padding: .55rem; border: 1px solid var(--line); background: white; }
+.order-details button { padding: .6rem; border: 1px solid var(--ink); background: var(--yellow); cursor: pointer; font-weight: 800; }
 .notice { padding: .8rem; background: #fff3c9; font-size: .82rem; }
 .compact-form { grid-template-columns: 1fr 1fr; margin-bottom: 2rem; }
 .compact-form h3, .compact-form .button, .compact-form p { grid-column: 1 / -1; }
@@ -67,6 +70,12 @@ h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
 .manage-card h3 { margin: .2rem 0 .5rem; }
 .manage-card button { padding: .5rem .7rem; border: 1px solid var(--ink); background: white; cursor: pointer; font-weight: 800; }
 .manage-card .danger { color: #a52d50; border-color: #a52d50; }
+.artwork-edit { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.artwork-edit label { display: grid; gap: .25rem; font-size: .75rem; font-weight: 800; }
+.artwork-edit input, .artwork-edit textarea { padding: .55rem; border: 1px solid var(--line); background: white; }
+.artwork-edit .wide { grid-column: 1 / -1; }
+.message-card.read { opacity: .65; }
+.message-card .actions { justify-content: flex-end; }
 footer { max-width: 1180px; margin: auto; border-top: 1px solid var(--line); padding: 2rem; display: flex; justify-content: space-between; font-size: .78rem; color: #777282; }
 @media (max-width: 760px) {
   .site-header { align-items: flex-start; }
